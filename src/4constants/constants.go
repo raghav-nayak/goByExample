@@ -20,7 +20,7 @@ func main() {
 	// A number can be given a type by using it in a context that requires one, such as a variable assignment or function call.
 }
 
-// output
+// output:
 // constant
 // 6e+09
 // 6000000000
