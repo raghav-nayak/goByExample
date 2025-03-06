@@ -19,3 +19,7 @@ func main() {
 	res2 := plusPlus(1, 2, 3)
 	fmt.Println("1+2+3=",res2)
 }
+
+// output:
+// 1+2= 3
+// 1+2+3= 6
