@@ -26,9 +26,10 @@ func main() {
 
 	// sending 5 jobs
 	for j := 1; j <= numsJobs; j++ {
+		fmt.Println("Pushed ", j, " to jobs channel")
 		jobs <- j
 	}
-	close(jobs) // clone the channel to indicate the work we have
+	close(jobs) // close the channel to indicate the work we have
 
 	// this is important to collect all the results of the work to ensure that the worker goroutines have finished
 	// alternative to this is to use WaitGroup
@@ -39,13 +40,18 @@ func main() {
 
 // output:
 // note: even though we have 5 jobs, the concurrent workers have finished the jobs in 2s
-// worker 3 started job 1
-// worker 1 started job 2
+// Pushed  1  to jobs channel
+// Pushed  2  to jobs channel
+// Pushed  3  to jobs channel
+// Pushed  4  to jobs channel
+// Pushed  5  to jobs channel
+// worker 3 started job 2
 // worker 2 started job 3
-// worker 3 finished job 1
-// worker 3 started job 4
-// worker 1 finished job 2
-// worker 1 started job 5
+// worker 1 started job 1
+// worker 1 finished job 1
+// worker 1 started job 4
+// worker 3 finished job 2
+// worker 3 started job 5
 // worker 2 finished job 3
-// worker 3 finished job 4
-// worker 1 finished job 5
+// worker 1 finished job 4
+// worker 3 finished job 5
