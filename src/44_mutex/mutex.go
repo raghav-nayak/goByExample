@@ -1,5 +1,6 @@
 // for more complex state, we can use mutex
 // to safely access data across multiple goroutines
+// we use mutex for explicit locking to synchronize access to shared state across multiple goroutines
 
 package main
 
