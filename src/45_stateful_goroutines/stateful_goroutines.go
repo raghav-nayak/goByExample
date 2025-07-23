@@ -1,6 +1,9 @@
 // Another alternative to mutex, to use the built-in synchronization features of goroutines and channels
 // to achieve the same result. This channel-based approach aligns with Go's ideas of sharing memory by
 // communicating and having each piece of data owned by exactly 1 goroutine.
+// For this particular case the goroutine-based approach is a bit more involved than the mutex-based one.
+// It might be useful in certain cases though, e.g. where you have other channels involved or when managing 
+// multiple such mutexes would be error-prone.
 
 package main
 
