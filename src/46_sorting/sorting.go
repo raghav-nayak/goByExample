@@ -9,6 +9,7 @@ import (
 
 func main() {
 	strs := []string{"c", "a", "b"}
+    // sorting functions are generic, and work for any ordered built-in type
 	slices.Sort(strs)
 	fmt.Println("Sorted strings: ", strs)
 
@@ -16,6 +17,7 @@ func main() {
 	slices.Sort(ints)
 	fmt.Println("Sorted ints: ", ints)
 
+    // the slices package to check if a slice is already in sorted order 
 	s := slices.IsSorted(ints)
 	fmt.Println("Ints sorted? ", s)
 
@@ -23,7 +25,7 @@ func main() {
 
 
 //output:
-// $ go run src/46_sorting/sorting.go                                                                                                                    [22:19:32]
+// $ go run src/46_sorting/sorting.go
 // Sorted strings:  [a b c]
 // Sorted ints:  [2 4 7]
 // Ints sorted?  true
