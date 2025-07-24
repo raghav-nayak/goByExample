@@ -1,6 +1,8 @@
 // means something went  expectedly wrong.
 // Mostly we use panic to fail fast on error that shouldn't occur during normal operation
 // or that we aren't prepared to handle gracefully.
+// Unlike some languages which use exceptions for handling of many errors,
+// in Go it is idiomatic to use error-indicating return values wherever possible
 
 package main
 
