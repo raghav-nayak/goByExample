@@ -16,7 +16,6 @@ func mayPanic() {
 }
 
 func main() {
-
     // recover must be called within a deferred function. When the enclosing function panics, the defer will activate
     // and a recover call within it will catch the panic
     defer func() {
@@ -26,8 +25,10 @@ func main() {
         }
     }()
 
+    // Call mayPanic and recover from its panic
     mayPanic()
 
+    // Ensure this line is printed even after a panic
     fmt.Println("After mayPanic()")
 }
 
